@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTOR TAREAS PERSONALES</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+</head>
+<body>
+    <header>
+        <h1 id="saludo">Examen</h1>
+    </header>
+    <section>
+        <h2>LISTA PERSONAL</h2>
+    </section>
+    <section>
+        <div>
+            <label for="nombre">nombre:</label>
+            <input type="text" id="text" name="text" required minlength="3" maxlength="30">
+            <br>
+            <label for="fecha">fecha:</label>
+            <input type="date" id="fecha" name="fecha" required>
+            <br>
+            <label for="prioridad">prioridad:</label>
+            <input type="radio" id="prioridad" name="prioridad" value="alta" required> Alta
+            <input type="radio" id="prioridad2" name="prioridad" value="media" required> Media
+            <input type="radio" id="prioridad3" name="prioridad" value="baja" required> Baja
+            <br>
+            <label for="lista">Lista de Tareas</label>
+            <button id="boton">Guardar</button>
+            <p id="mensaje"></p>
+            <ul id="lista"></ul>
+        </div>
+    </section>
+    <script src="JS/App.js"></script>
+</body>
+</html>
+
