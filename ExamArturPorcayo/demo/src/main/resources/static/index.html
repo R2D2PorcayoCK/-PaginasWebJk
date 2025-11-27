@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Hola Exam</h1>
+</header>
+
+<main>
+
+    <form id="saludoForm">
+
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" required>
+
+        <label for="apellidoP">Apellido p:</label>
+        <input type="text" id="apellidoP" required>
+
+        <label for="apellidoM">Apellido M:</label>
+        <input type="text" id="apellidoM" required>
+
+        <label for="correo">CORREO:</label>
+        <input type="text" id="correo" required>
+
+        <label for="password">PASSWORD:</label>
+        <input type="text" id="password" required>
+
+        <p id="error"></p>
+
+        <button class="submit">Enviar</button>
+
+    </form>
+
+    <h3>Respuesta server:</h3>
+    <div id="respuesta"></div>
+
+
+
+</main>
+
+<script>
+    const form = document.getElementById("saludoForm");
+    const error = document.getElementById("error");
+
+    form.addEventListener("submit", async (event) =>{
+        event.preventDefault();
+
+        const nombre = document.getElementById("nombre");
+        const apellidoM = document.getElementById("apellidoP");
+        const apellidoP = document.getElementById("apellidoP");
+        const correo = document.getElementById("correo");
+        const password = document.getElementById("password");
+
+
+        const datos = {nombre, apellidoP, apellidoM, correo, password};
+
+
+
+        const respuesta = await fetch("/saludo", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(datos)
+        });
+
+        const json = await respuesta.json();
+        document.getElementById("respuesta");
+        textContent = json.mensaje;
+    });
+
+</script>
+
+</body>
+
+</html>
+

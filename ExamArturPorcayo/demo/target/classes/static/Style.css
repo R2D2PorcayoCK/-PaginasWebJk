@@ -1,0 +1,18 @@
+div{
+color: darkred;
+}
+
+main{
+    background-color: black;
+}
+
+label{
+    color: white;
+    font-family: "Bodoni MT Black";
+    border-bottom: aqua;
+}
+
+input{
+    color: dodgerblue;
+    border-bottom: aquamarine;
+}
