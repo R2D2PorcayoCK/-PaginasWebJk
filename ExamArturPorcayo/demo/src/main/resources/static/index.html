@@ -50,8 +50,8 @@
         event.preventDefault();
 
         const nombre = document.getElementById("nombre").value;
-        const apellidoM = document.getElementById("apellidoP").value;
-        const apellidoP = document.getElementById("apellidoM").value;
+        const apellidoP = document.getElementById("apellidoP").value;
+        const apellidoM = document.getElementById("apellidoM").value;
         const correo = document.getElementById("correo").value;
         const password = document.getElementById("password").value;
 
@@ -67,8 +67,7 @@
         });
 
         const json = await respuesta.json();
-        document.getElementById("respuesta");
-        textContent = json.mensaje;
+        document.getElementById("respuesta").textContent = json.mensaje;
     });
 
 </script>
@@ -76,4 +75,5 @@
 </body>
 
 </html>
+
 
