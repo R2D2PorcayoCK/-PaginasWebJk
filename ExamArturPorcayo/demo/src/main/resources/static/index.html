@@ -46,16 +46,15 @@
 
 <script>
     const form = document.getElementById("saludoForm");
-    const error = document.getElementById("error");
 
     form.addEventListener("submit", async (event) =>{
         event.preventDefault();
 
-        const nombre = document.getElementById("nombre");
-        const apellidoM = document.getElementById("apellidoP");
-        const apellidoP = document.getElementById("apellidoP");
-        const correo = document.getElementById("correo");
-        const password = document.getElementById("password");
+        const nombre = document.getElementById("nombre").value;
+        const apellidoM = document.getElementById("apellidoP").value;
+        const apellidoP = document.getElementById("apellidoM").value;
+        const correo = document.getElementById("correo").value;
+        const password = document.getElementById("password").value;
 
 
         const datos = {nombre, apellidoP, apellidoM, correo, password};
