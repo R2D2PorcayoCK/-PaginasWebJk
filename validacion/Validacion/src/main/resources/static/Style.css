@@ -1,0 +1,34 @@
+body {
+    background-color: black;
+    font-family: "Times New Roman";
+}
+
+header{
+    color: dodgerblue;
+}
+
+footer {
+    Color: lightblue;
+    font-family: "Times New Roman";
+}
+
+label {
+    Color: whitesmoke;
+}
+
+input {
+    Color: whitesmoke;
+    background-color: darkgray;
+}
+
+h2 {
+    Color: turquoise;
+}
+
+p{
+    Color: red;
+}
+
+button{
+    color: green;
+}

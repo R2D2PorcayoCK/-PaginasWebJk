@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio validación con JavaScript</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+<header>
+    <h1>Ejercicio validación usuario y contraseña</h1>
+</header>
+
+<main>
+
+    <form id="saludoForm">
+
+        <label for="nombre">NOMBRE:</label>
+        <input type="text" id="nombre" >
+
+        <label for="password">PASSWORD:</label>
+        <input type="password" id="password" >
+
+        <button type="submit">ENVIAR</button>
+
+    </form>
+
+    <h2>RESPUESTA DEL SERVIDOR:</h2>
+    <p id="error"></p>
+    <p id="respuesta"></p>
+
+</main>
+
+<footer>
+    <h3>MUCHAS GRACIAS PROFE :)</h3>
+</footer>
+
+<script>
+
+    const form = document.getElementById("saludoForm");
+
+    form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const error = document.getElementById("error");
+
+        const nombre = document.getElementById("nombre").value;
+        const password = document.getElementById("password").value;
+
+
+        if (nombre === "" || password === "") {
+            error.textContent = "Ingresa todos los campos";
+            return;
+        } else {
+            error.textContent = "";
+        }
+
+        const datos = { nombre, password };
+
+        const respuesta = await fetch("/saludo", {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(datos)
+        });
+
+        const json = await respuesta.json();
+        document.getElementById("respuesta").textContent = json.mensaje;
+    });
+
+</script>
+
+</body>
+</html>
